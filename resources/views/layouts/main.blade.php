@@ -11,7 +11,6 @@
     <body>
         @include('partials.header')
 
-
         <script src="{{ asset('js/jquery.min.js') }}"></script>        
         <script src="{{ asset('js/materialize.min.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>        
