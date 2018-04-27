@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('.button-collapse').sideNav({
-        menuWidth: 100, // Default is 300       
+        menuWidth: 300, // Default is 300       
     }
     );
           

@@ -22,3 +22,10 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
+Route::get('/library', function() {
+
+    $books = ['book1', 'book2', 'book3', 'book4', 'book5'];
+
+    return view('library', compact('books'));
+})->name('library');

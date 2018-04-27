@@ -4,7 +4,7 @@
              <a href=" {{ route('index') }}" class="brand-logo">Library2000</a>
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-            <li><a href="{{ route('index') }}">Library</a></li>
+            <li><a href="{{ route('library') }}">Library</a></li>
             <li><a href="{{ route('register') }}">Register</a></li>
             <li><a href="{{ route('login') }}">Login</a></li>
             </ul>
