@@ -27,6 +27,12 @@ Route::get('/library', function() {
 
     $books = DB::table('books')->get();
 
-    
     return view('library', compact('books'));
 })->name('library');
+
+Route::get('/book/{id}', function($id) {
+
+    $book = DB::table('books')->find($id);
+
+    return view('book', ['book' => $book]);
+})->name('book');
