@@ -25,7 +25,8 @@ Route::get('/login', function () {
 
 Route::get('/library', function() {
 
-    $books = ['book1', 'book2', 'book3', 'book4', 'book5'];
+    $books = DB::table('books')->get();
 
+    
     return view('library', compact('books'));
 })->name('library');
