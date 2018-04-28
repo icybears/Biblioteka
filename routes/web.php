@@ -14,18 +14,10 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/library', function() {
+Route::get('/library', 'BooksController@index')->name('library');
 
-    // $books = DB::table('books')->get();
-    $books = Book::all();
+Route::get('/book/{id}', 'BooksController@show')->name('book');
 
-    return view('library', compact('books'));
-})->name('library');
-
-Route::get('/book/{id}', function($id) {
-
-    // $book = DB::table('books')->find($id); 
-    $book = Book::find($id);
-
-    return view('book', ['book' => $book]);
-})->name('book');
+Route::get('/admin', function(){
+    return view('admin');
+})->name('admin');
