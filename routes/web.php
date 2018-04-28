@@ -26,14 +26,14 @@ Route::get('/admin', function(){
     return view('admin.index');
 })->name('admin.index');
 
-Route::get('/admin/new_book', function(){
-    return view('admin.new_book');
-})->name('admin.new_book');
+Route::get('/admin/book/create', 'BooksController@create')->name('admin.new_book');
 
-Route::get('/admin/manage_books', function(){
+Route::post('/admin/book/create', 'BooksController@store');
+
+Route::get('/admin/books', function(){
     return view('admin.manage_books');
 })->name('admin.books');
 
-Route::get('/admin/manage_users', function(){
+Route::get('/admin/users', function(){
     return view('admin.manage_users');
 })->name('admin.users');

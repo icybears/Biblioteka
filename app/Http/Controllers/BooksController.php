@@ -20,4 +20,34 @@ class BooksController extends Controller
     
         return view('book', ['book' => $book]);
     }
+
+    public function create() {
+        return view('admin.new_book');
+    }
+
+    public function store() {
+        // new book instance
+        // $book = new Book;
+
+        // setting the values for each field
+        // $book->title = request('Title');
+        // $book->author = request('Author'); 
+        //...
+        //save to db
+        // $book->save();
+        
+        Book::create([
+            'title' => request('Title'),
+            'author' => request('Author'),
+            'language' => request('Language'),
+            'year' => request('Year'),
+            'pages' => request('Pages'),
+            'imageLink'=> ''   
+        ]);
+        
+  
+
+        //redirecting    
+        return redirect('admin/book/create')->with('status', 'Book Added Successfully !');
+    }
 }
