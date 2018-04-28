@@ -9,7 +9,8 @@ class BooksController extends Controller
 {
     public function index() {
             // $books = DB::table('books')->get();
-            $books = Book::all();
+            //$books = Book::all();
+            $books = Book::paginate(15);
     
             return view('library', compact('books'));
     }
@@ -35,7 +36,7 @@ class BooksController extends Controller
         //...
         //save to db
         // $book->save();
-        
+
         Book::create([
             'title' => request('Title'),
             'author' => request('Author'),
