@@ -16,6 +16,10 @@ Route::get('/login', function () {
 
 Route::get('/library', 'BooksController@index')->name('library');
 
+Route::get('/library/search', 'BooksController@search')->name('librarysearch');
+
+Route::get('/library/filter', 'BooksController@filter')->name('libraryfilter');
+
 Route::get('/book/{id}', 'BooksController@show')->name('book');
 
 //
@@ -36,6 +40,6 @@ Route::get('/admin/users', function(){
     return view('admin.manage_users');
 })->name('admin.users');
 
-Route::get('/admin/books/search', 'BooksController@search')->name('adminsearch');
+Route::get('/admin/books/search', 'BooksController@adminSearch')->name('adminsearch');
 
-Route::get('/admin/books/filter', 'BooksController@filter')->name('adminfilter');
+Route::get('/admin/books/filter', 'BooksController@adminFilter')->name('adminfilter');

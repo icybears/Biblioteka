@@ -5,7 +5,7 @@
 <div class="container" id="library">
     <br>
     <div class="section">
-        @include('partials.filter-books-form')
+        @include('partials.filter-books-public-form')
     </div>
 
     <div class="row container section">

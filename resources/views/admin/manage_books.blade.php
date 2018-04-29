@@ -4,7 +4,7 @@
     <div class="container section">
         <h4>Manage Books</h4>
         <div class="section">
-            @include('partials/filter-books-form')
+            @include('partials/filter-books-admin-form')
         <table class="centered bordered highlight">
             <thead>
                 <tr>
