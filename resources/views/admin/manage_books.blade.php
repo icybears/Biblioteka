@@ -51,8 +51,11 @@
     </a></td>
                     <td><a class="btn-floating btn-small red lighten-2 modal-trigger" href="#delete">
       <i class="small material-icons">delete_forever</i>
-    </a></td>                          
+    </a></td>  
+    @include('partials.edit-book-modal')
+                @include('partials.confirm-delete')                        
                 </tr>
+                
                 @endforeach
             </tbody>
         </table>
@@ -65,6 +68,5 @@
             </div>
      </div>
     </div>
-    @include('partials.edit-book-modal')
-    @include('partials.confirm-delete')
+
 @endsection
