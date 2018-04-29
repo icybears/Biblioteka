@@ -30,9 +30,7 @@ Route::get('/admin/book/create', 'BooksController@create')->name('admin.new_book
 
 Route::post('/admin/book/create', 'BooksController@store');
 
-Route::get('/admin/books', function(){
-    return view('admin.manage_books');
-})->name('admin.books');
+Route::get('/admin/books', 'BooksController@manage')->name('admin.books');
 
 Route::get('/admin/users', function(){
     return view('admin.manage_users');

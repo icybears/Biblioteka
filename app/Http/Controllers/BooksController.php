@@ -15,6 +15,12 @@ class BooksController extends Controller
             return view('library', compact('books'));
     }
 
+    public function manage() {
+
+        $books = Book::paginate(15);
+        return view('admin.manage_books', compact('books'));
+    }
+
     public function show($id){
         // $book = DB::table('books')->find($id); 
          $book = Book::find($id);

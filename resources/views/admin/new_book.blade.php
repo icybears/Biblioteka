@@ -35,7 +35,7 @@
             <label for="pages">Pages</label>
           </div>
           <div class="file-field input-field col s12 m6">
-          <div class="btn grey">
+          <div class="btn btn-small grey">
             <span>Book Image</span>
             <input type="file" name="image">
           </div>
@@ -43,8 +43,12 @@
             <input class="file-path validate" type="text">
           </div>
         </div>
-          <button class="btn waves-effect waves-light green" type="submit" name="action">Add Book
-          </button>
+        
+         <div class="col s12 ">
+             <br>
+              <button class="btn waves-effect waves-light green" type="submit" name="action">Add Book
+              </button>
+         </div>
         </form>
     </div>
 

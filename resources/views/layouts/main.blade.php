@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
         <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     </head>
     <body>
         @include('partials.header')
