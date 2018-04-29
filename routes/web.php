@@ -35,3 +35,7 @@ Route::get('/admin/books', 'BooksController@manage')->name('admin.books');
 Route::get('/admin/users', function(){
     return view('admin.manage_users');
 })->name('admin.users');
+
+Route::get('/admin/books/search', 'BooksController@search')->name('adminsearch');
+
+Route::get('/admin/books/filter', 'BooksController@filter')->name('adminfilter');

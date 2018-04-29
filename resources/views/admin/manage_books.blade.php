@@ -4,26 +4,7 @@
     <div class="container section">
         <h4>Manage Books</h4>
         <div class="section">
-        <form action="" class="row">
-          <div class="col s12 m4">
-            
-                <input name="group1" type="radio" id="test1" class="with-gap"/>
-                <label for="test1">Red</label>
-        
-                <input name="group1" type="radio" id="test2" class="with-gap"/>
-                <label for="test2">Yellow</label>
-          </div>
-          <div class="input-field col s12 m6">
-                <input placeholder="Search by Title or by Author" id="search" type="search">
-                <label for="search">Search library</label>
-          </div>
-          <div class="col s6 m2" >
-                <button class="btn waves-effect waves-light " type="submit" name="action">
-                    Search
-                </button>
-          </div>
-        </form>
-    </div>
+            @include('partials/filter-books-form')
         <table class="centered bordered highlight">
             <thead>
                 <tr>

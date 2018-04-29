@@ -22,3 +22,8 @@ strong{
 table th {
     font-weight: bold;
 }
+
+#filter label{
+    padding-left:1.6em;
+    padding-right:1%;
+}
