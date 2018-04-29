@@ -46,21 +46,25 @@
                     <td>{{ $book->language }}</td>
                     <td>{{ $book->year }}</td>
                     <td>{{ $book->imageLink }}</td>
-                    <td>  <a class="btn-floating btn-small green lighten-3">
+                    <td>  <a class="btn-floating btn-small green lighten-3 modal-trigger" href="#edit">
       <i class="small material-icons">mode_edit</i>
     </a></td>
-                    <td><a class="btn-floating btn-small red lighten-2">
+                    <td><a class="btn-floating btn-small red lighten-2 modal-trigger" href="#delete">
       <i class="small material-icons">delete_forever</i>
     </a></td>                          
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <div class="row section">
-        <div class="col s12 center-align">
-            {{ $books->links() }}
-        </div>
+        <br>
+     <div class="section">
+            <div class="row">
+                <div class="col s12 center-align">
+                    {{ $books->links() }}
+                </div>
+            </div>
+     </div>
     </div>
-    </div>
-
+    @include('partials.edit-book-modal')
+    @include('partials.confirm-delete')
 @endsection
