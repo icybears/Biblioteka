@@ -10,15 +10,18 @@
 
     <div class="row section">
     @foreach($books as $book)
-        <div class="col s12 m4 l3">
+        <div class="col s12 m4 l3 ">
             <a href="{{route('book', $book->id)}}">
-                <div class="card small  ">
+                <div class="card small  hoverable truncate">
                     <div class="card-image">
                         <img src="{{ asset('static/images/' . $book->imageLink) }}" alt="{{ $book->title }}"/>
                         <span class="card-title"></span>
                     </div>
-                    <div class="card-content">
-                        <p>{{ $book->title }} &mdash; {{ $book->author }}</p>
+                    <div class="">
+                        <p class="center-align truncate">
+                            <strong>{{ $book->title }}</strong><br>
+                             {{ $book->author }}
+                        </p>
                     </div>
                 </div>
             </a>

@@ -16,7 +16,7 @@
      </form>
      <form  class="row" id="filter" action="{{ route('libraryfilter') }}" method="">
               <div class="col s12 valign-wrapper center-align">
-                    <div class="col s12 m7 ">
+                    <div class="col s12 m7 hide-on-small-only">
                                 <input name="filterby" type="radio" id="recent" value="recent" class="with-gap" {{ (request('filterby') == 'recent') ? 'checked' : null }} {{ !request('filterby') ? 'checked' : null }}/>
                                 <label for="recent" value="recent">Recently Added</label>
                 
