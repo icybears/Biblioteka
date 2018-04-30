@@ -115,7 +115,10 @@ class BooksController extends Controller
         // $imageLink = $request->bookImage->getClientOriginalExtension();
         if($request->file('bookImage')){
             $imageLink = $request->file('bookImage')->getClientOriginalName();
-            $request->file('bookImage')->move(public_path('static/images'), $imageLink);
+            // not sure
+            if(!is_file(public_path('static/images/' . $imageLink))){ //if the image file doesnt already exist
+                $request->file('bookImage')->move(public_path('static/images'), $imageLink);
+            }
         
         } else {
             $imageLink = '';
