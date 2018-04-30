@@ -39,3 +39,8 @@ table th {
 #manage_books{
     min-width:705px;
 }
+#add-book-form{
+padding:2em;
+ max-width:600px; 
+ margin:auto;
+}

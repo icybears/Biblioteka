@@ -11,8 +11,8 @@
         </div>
         @endif
         <h4>Add a book</h4>
-        <div class="component">
-          <form method="post" class="row" style="max-width:600px; margin:auto;" files="true" enctype="multipart/form-data">
+        <div class="component" id="add-book-form">
+          <form method="post" class="row"  files="true" enctype="multipart/form-data">
           {{csrf_field()}}            
             <div class="input-field col s12 m6">
               <input type="text" id="title" name="Title" class="validate">
