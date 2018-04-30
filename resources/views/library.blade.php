@@ -8,7 +8,7 @@
         @include('partials.filter-books-public-form')
     </div>
 
-    <div class="row container section">
+    <div class="row section">
     @foreach($books as $book)
         <div class="col s12 m4 l3">
             <a href="{{route('book', $book->id)}}">
@@ -32,4 +32,3 @@
     </div>
 </div>
 @endsection
-</div>
