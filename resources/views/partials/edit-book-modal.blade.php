@@ -1,8 +1,9 @@
 <div id="edit" class="modal">
+<form method="post" class="section row" style="max-width:600px; margin:auto;" action="{{ route('admin.update') }}">
     <div class="modal-content">
       <h4>Edit a book</h4>
-        <form method="post" class="section row" style="max-width:600px; margin:auto;">
-        {{csrf_field()}}            
+        {{csrf_field()}}   
+          <input type="hidden" name="id" value="{{ $book->id }}">         
           <div class="input-field col s12 m6">
             <input type="text" id="title" name="Title" class="validate" value="{{ $book->title }}">
             <label for="title">Title</label>
@@ -35,7 +36,8 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Edit</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>      
+      <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat green ">Edit</button>
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>      
     </div>
+  </form>
   </div>

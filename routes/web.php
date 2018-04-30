@@ -43,3 +43,7 @@ Route::get('/admin/users', function(){
 Route::get('/admin/books/search', 'BooksController@adminSearch')->name('adminsearch');
 
 Route::get('/admin/books/filter', 'BooksController@adminFilter')->name('adminfilter');
+
+Route::get('/admin/books/delete', 'BooksController@delete')->name('admin.delete');
+
+Route::post('/admin/books/edit', 'BooksController@update')->name('admin.update');

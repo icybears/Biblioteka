@@ -120,10 +120,27 @@ class BooksController extends Controller
             'pages' => request('Pages'),
             'imageLink'=> ''   
         ]);
-        
-  
-
-        //redirecting    
+ 
         return redirect('admin/book/create')->with('status', 'Book Added Successfully !');
+    }
+
+    public function update(){
+        Book::where('id', request('id'))
+            ->update([
+                'title' => request('Title'),
+                'author' => request('Author'),
+                'language' => request('Language'),
+                'year' => request('Year'),
+                'pages' => request('Pages'),
+                'imageLink'=> ''   
+            ]);
+
+        return redirect('admin/books')->with(['status' => 'Book updated']);
+    }
+    public function delete() {
+
+         Book::destroy(request('id'));
+
+        return redirect('admin/books')->with(['status' => 'Book deleted']);
     }
 }
