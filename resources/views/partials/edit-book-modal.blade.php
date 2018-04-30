@@ -1,5 +1,5 @@
 <div id="edit" class="modal">
-<form method="post" class="section row" style="max-width:600px; margin:auto;" action="{{ route('admin.update') }}">
+<form method="post" class="section row" style="max-width:600px; margin:auto;" action="{{ route('admin.update') }}" files="true" enctype="multipart/form-data">
     <div class="modal-content">
       <h4>Edit a book</h4>
         {{csrf_field()}}   
@@ -28,7 +28,7 @@
           <div class="file-field input-field col s12 m6" >
           <div class="btn btn-small grey">
             <span>Book Image</span>
-            <input type="file" name="image">
+            <input type="file" name="bookImage" accept=".jpg,.jpeg,.png">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" value="{{ $book->imageLink }}">

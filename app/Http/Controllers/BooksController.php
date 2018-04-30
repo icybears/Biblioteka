@@ -133,7 +133,20 @@ class BooksController extends Controller
         return redirect('admin/book/create')->with('status', 'Book Added Successfully !');
     }
 
-    public function update(){
+    public function update(Request $request){
+
+        if($request->file('bookImage')){ // if file is sent 
+
+
+                $imageLink = $request->file('bookImage')->getClientOriginalName();
+                if(!is_file(public_path('static/images/' . $imageLink))){ //if the image file doesnt already exist
+                    $request->file('bookImage')->move(public_path('static/images'), $imageLink);
+                }
+        
+        } else {
+            $imageLink = request('bookImage');
+        }
+       
         Book::where('id', request('id'))
             ->update([
                 'title' => request('Title'),
@@ -141,7 +154,7 @@ class BooksController extends Controller
                 'language' => request('Language'),
                 'year' => request('Year'),
                 'pages' => request('Pages'),
-                'imageLink'=> ''   
+                'imageLink'=> $imageLink   
             ]);
 
         return redirect('admin/books')->with(['status' => 'Book updated']);
