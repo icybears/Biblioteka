@@ -101,7 +101,7 @@ class BooksController extends Controller
         $books = $books->paginate(16);
         return view('admin.manage_books', compact('books'));
     }
-    public function store() {
+    public function store(Request $request) {
         // new book instance
         // $book = new Book;
 
@@ -112,13 +112,22 @@ class BooksController extends Controller
         //save to db
         // $book->save();
 
+        // $imageLink = $request->bookImage->getClientOriginalExtension();
+        if($request->file('bookImage')){
+            $imageLink = $request->file('bookImage')->getClientOriginalName();
+            $request->file('bookImage')->move(public_path('static/images'), $imageLink);
+        
+        } else {
+            $imageLink = '';
+        }
+       
         Book::create([
             'title' => request('Title'),
             'author' => request('Author'),
             'language' => request('Language'),
             'year' => request('Year'),
             'pages' => request('Pages'),
-            'imageLink'=> ''   
+            'imageLink'=> $imageLink   
         ]);
  
         return redirect('admin/book/create')->with('status', 'Book Added Successfully !');
