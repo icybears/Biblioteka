@@ -16,11 +16,6 @@ class BooksController extends Controller
             return view('library', compact('books'));
     }
 
-    public function manage() {
-
-        $books = Book::orderBy('id','desc')->paginate(16);
-        return view('admin.manage_books', compact('books'));
-    }
 
     public function show($id){
         // $book = DB::table('books')->find($id); 
@@ -34,30 +29,7 @@ class BooksController extends Controller
     }
 
 
-    public function adminFilter() {
-        if(request('search')){
-        $books = Book::where('title','like','%' . request('search') .'%')
-                        ->orWhere('author','like','%' . request('search') .'%');
-        } else {
-        $books = Book::where('id','>','0');
-        }
-        if(request('language')){
-           
-            $books = $books->where('language', request('language'));
-                    
-        }
-        if(request('filterby') == 'recent'){
-            $books = $books->orderBy('id','desc');
-                            
-        } else if(request('filterby') == 'oldest'){
-            $books = $books->orderBy('id','asc');                  
-        } else if(request('filterby') == 'bypages'){
-            $books = $books->orderBy('pages', 'asc');
-        }
-
-        $books = $books->paginate(16);
-        return view('admin.manage_books', compact('books'));
-    }
+    
 
     public function store(Request $request) {
 

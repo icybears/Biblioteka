@@ -34,15 +34,13 @@ Route::get('/admin/book/new', 'BooksController@create')->name('admin.new_book');
 
 Route::post('/admin/book/create', 'BooksController@store');
 
-Route::get('/admin/books', 'BooksController@manage')->name('admin.books');
+Route::get('/admin/books', 'AdminController@manageBooks')->name('admin.books');
 
-Route::get('/admin/users', function(){
-    return view('admin.manage_users');
-})->name('admin.users');
+Route::get('/admin/users', 'AdminController@manageUsers')->name('admin.users');
 
-Route::get('/admin/books/search', 'BooksController@adminSearch')->name('adminsearch');
+Route::get('/admin/books/search', 'AdminController@bookSearch')->name('adminsearch');
 
-Route::get('/admin/books/filter', 'BooksController@adminFilter')->name('adminfilter');
+Route::get('/admin/books/filter', 'AdminController@bookFilter')->name('adminfilter');
 
 Route::get('/admin/books/delete', 'BooksController@delete')->name('admin.delete');
 
