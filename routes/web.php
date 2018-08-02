@@ -16,21 +16,21 @@ Route::get('/login', function () {
 
 Route::get('/library', 'BooksController@index')->name('library');
 
-Route::get('/library/search', 'BooksController@search')->name('librarysearch');
-
-Route::get('/library/filter', 'BooksController@filter')->name('libraryfilter');
-
 Route::get('/book/{id}', 'BooksController@show')->name('book');
 
+// 
+// Library
+//
+Route::get('/library/search', 'LibraryController@search');
+
+Route::get('/library/filter', 'LibraryController@filter');
 //
 // Admin routes
 //
 
-Route::get('/admin', function(){
-    return view('admin.index');
-})->name('admin.index');
+Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-Route::get('/admin/book/create', 'BooksController@create')->name('admin.new_book');
+Route::get('/admin/book/new', 'BooksController@create')->name('admin.new_book');
 
 Route::post('/admin/book/create', 'BooksController@store');
 

@@ -1,5 +1,5 @@
  <div class="component">
-     <form class="row" id="search" action="{{ route('librarysearch') }}">
+     <form class="row" id="search" action="{{ url('/library/search') }}">
             <div class="col s10 offset-s1 valign-wrapper center-align" >
                         <div class="input-field col m4 offset-m3">
                                     <input placeholder="Search by Title or by Author" id="search" type="search" name="search" value="{{ request('search') }}">
@@ -14,7 +14,7 @@
                       </div>   
             </div>
      </form>
-     <form  class="row" id="filter" action="{{ route('libraryfilter') }}" method="">
+     <form  class="row" id="filter" action="{{ url('/library/filter') }}" method="">
               <div class="col s12 valign-wrapper center-align">
                     <div class="col s12 m7 hide-on-small-only">
                                 <input name="filterby" type="radio" id="recent" value="recent" class="with-gap" {{ (request('filterby') == 'recent') ? 'checked' : null }} {{ !request('filterby') ? 'checked' : null }}/>
