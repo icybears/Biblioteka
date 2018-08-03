@@ -6,13 +6,6 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
 
 Route::get('/library', 'BooksController@index')->name('library');
 
@@ -30,18 +23,23 @@ Route::get('/library/filter', 'LibraryController@filter');
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-Route::get('/admin/book/new', 'BooksController@create')->name('admin.new_book');
+Route::get('/admin/book/new', 'BooksController@create')->name('admin.createBook');
 
-Route::post('/admin/book/create', 'BooksController@store');
+Route::post('/admin/book/new', 'BooksController@store');
 
 Route::get('/admin/books', 'AdminController@manageBooks')->name('admin.books');
 
 Route::get('/admin/users', 'AdminController@manageUsers')->name('admin.users');
 
-Route::get('/admin/books/search', 'AdminController@bookSearch')->name('adminsearch');
+Route::get('/admin/books/search', 'AdminController@bookSearch')->name('admin.bookSearch');
 
-Route::get('/admin/books/filter', 'AdminController@bookFilter')->name('adminfilter');
+Route::get('/admin/books/filter', 'AdminController@bookFilter')->name('admin.bookFilter');
 
-Route::get('/admin/books/delete', 'BooksController@delete')->name('admin.delete');
+Route::get('/admin/books/delete', 'BooksController@delete')->name('admin.deleteBook');
 
-Route::post('/admin/books/edit', 'BooksController@update')->name('admin.update');
+Route::post('/admin/books/edit', 'BooksController@update')->name('admin.updateBook');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

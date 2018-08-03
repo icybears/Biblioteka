@@ -8,8 +8,7 @@ use App\Book;
 class BooksController extends Controller
 {
     public function index() {
-            // $books = DB::table('books')->get();
-            //$books = Book::all();
+          
             $books = Book::orderBy('id','desc')
                         ->paginate(16);
     
@@ -18,7 +17,7 @@ class BooksController extends Controller
 
 
     public function show($id){
-        // $book = DB::table('books')->find($id); 
+
          $book = Book::find($id);
     
         return view('book', ['book' => $book]);
@@ -29,9 +28,13 @@ class BooksController extends Controller
     }
 
 
-    
-
     public function store(Request $request) {
+        $this->validate(request(),
+        [
+            'title' => 'required|min:2',
+            'author' => 'required|min:2',
+            'image'=> 'mimes:jpeg,jpg,bmp,png'
+        ]);
 
         if($request->file('bookImage')){
             $imageLink = $request->file('bookImage')->getClientOriginalName();
@@ -45,15 +48,15 @@ class BooksController extends Controller
         }
        
         Book::create([
-            'title' => request('Title'),
-            'author' => request('Author'),
-            'language' => request('Language'),
-            'year' => request('Year'),
-            'pages' => request('Pages'),
+            'title' => request('title'),
+            'author' => request('author'),
+            'language' => request('language'),
+            'year' => request('year'),
+            'pages' => request('pages'),
             'imageLink'=> $imageLink   
         ]);
  
-        return redirect('admin/book/create')->with('status', 'Book Added Successfully !');
+        return back()->with('status', 'Book Added Successfully !');
     }
 
     public function update(Request $request){
@@ -82,6 +85,7 @@ class BooksController extends Controller
 
         return redirect('admin/books')->with(['status' => 'Book updated']);
     }
+
     public function delete() {
 
          Book::destroy(request('id'));

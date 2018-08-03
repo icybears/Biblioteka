@@ -3,36 +3,31 @@
 @section('content')
 
     <div class="container">
-        @if (session('status'))
-        <div class="card horizontal green lighten-3 white-text ">
-            <div class="card-content" >
-              <p  style="margin:auto;" >{{ session('status') }}</p>
-            </div>
-        </div>
-        @endif
+   @include('partials.message')
+   @include('partials.errors')
         <h4>Add a book</h4>
         <div class="component" id="add-book-form">
           <form method="post" class="row"  files="true" enctype="multipart/form-data">
-          {{csrf_field()}}            
+          {{ csrf_field() }}            
             <div class="input-field col s12 m6">
-              <input type="text" id="title" name="Title" class="validate">
+              <input type="text" id="title" name="title" class="validate">
               <label for="title">Title</label>
             </div>
             <div class="input-field col s12 m6">
-              <input type="text" id="author" name="Author" class="validate">
+              <input type="text" id="author" name="author" class="validate">
               <label for="author">Author</label>
             </div>
   
             <div class="input-field col s12 m6">
-              <input type="text" id="language" name="Language" class="validate">
+              <input type="text" id="language" name="language" class="validate">
               <label for="language">Language</label>
             </div>
             <div class="input-field col s12 m6">
-              <input type="text" id="year" name="Year" class="validate">
+              <input type="text" id="year" name="year" class="validate">
               <label for="year">Year</label>
             </div>
             <div class="input-field col s12 m6">
-              <input type="number" id="pages" name="Pages" class="validate">
+              <input type="number" id="pages" name="pages" class="validate">
               <label for="pages">Pages</label>
             </div>
            
@@ -48,7 +43,7 @@
           
            <div class="col s12 ">
                <br>
-                <button class="btn waves-effect waves-light green" type="submit" name="action">Add Book
+                <button class="btn waves-effect waves-light green" type="submit">Add Book
                 </button>
            </div>
           </form>

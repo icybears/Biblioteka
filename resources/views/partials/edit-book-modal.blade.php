@@ -1,5 +1,5 @@
 <div id="edit" class="modal">
-<form method="post" class="section row" style="max-width:600px; margin:auto;" action="{{ route('admin.update') }}" files="true" enctype="multipart/form-data">
+<form method="post" class="section row" style="max-width:600px; margin:auto;" action="{{ route('admin.updateBook') }}" files="true" enctype="multipart/form-data">
     <div class="modal-content">
       <h4>Edit a book</h4>
         {{csrf_field()}}   

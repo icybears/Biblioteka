@@ -1,6 +1,6 @@
 
  <div class="component">
-     <form class="row" id="search" action="{{ route('adminsearch') }}">
+     <form class="row" id="search" action="{{ route('admin.bookSearch') }}">
             <div class="col s10 offset-s1 valign-wrapper center-align" >
                         <div class="input-field col m4 offset-m3">
                                     <input placeholder="Search by Title or by Author" id="search" type="search" name="search" value="{{ request('search') }}">
@@ -15,7 +15,7 @@
                       </div>   
             </div>
      </form>
-     <form  class="row" id="filter" action="{{ route('adminfilter') }}" method="">
+     <form  class="row" id="filter" action="{{ route('admin.bookFilter') }}" method="">
               <div class="col s12 valign-wrapper center-align">
                     <div class="col s7 ">
                                 <input name="filterby" type="radio" id="recent" value="recent" class="with-gap" {{ (request('filterby') == 'recent') ? 'checked' : null }} {{ !request('filterby') ? 'checked' : null }}/>

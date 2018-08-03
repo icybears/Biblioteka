@@ -4,7 +4,7 @@
              <a href=" {{ route('admin.index') }}" class="brand-logo">Library2000</a>
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-            <li><a href="{{ route('admin.new_book') }}">Add a Book</a></li>
+            <li><a href="{{ route('admin.createBook') }}">Add a Book</a></li>
             <li><a href="{{ route('admin.books') }}">Manage Books</a></li>
             <li><a href="{{ route('admin.users') }}">Manage Users</a></li>
             </ul>
