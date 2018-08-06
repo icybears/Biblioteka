@@ -43,3 +43,5 @@ Route::post('/admin/books/edit', 'BooksController@update')->name('admin.updateBo
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'ProfileController@show');

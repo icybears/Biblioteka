@@ -10,7 +10,7 @@
             <div class="row card-panel">
                     <div class="row">
                             <div class="input-field col s12">
-                                <input name="name" placeholder="Your name" id="name" type="text" class="validate">
+                                <input name="name" placeholder="Your name" id="name" type="text" class="validate" value='{{ old("name") }}'>
                                 <label for="name">Name</label>
                                 @if ($errors->has('name'))
                                 <div class="card-panel red">
