@@ -8,7 +8,7 @@
                             </div>
         
                       <div class=" col m2 pull-m3">
-                                <button class="btn waves-effect waves-light " type="submit" >
+                                <button class="btn waves-effect waves-light " type="button" onclick="submitForm(this)" >
                                     Search
                                 </button>
                       </div>   
@@ -50,7 +50,7 @@
                             <label for="language">Language</label>
                     </div>
                     <div class="col s12 m2 ">
-                        <button class="btn waves-effect waves-light" type="submit" >
+                        <button class="btn waves-effect waves-light" type="button" onclick="submitForm(this)">
                                     Filter
                         </button>
                     </div>
