@@ -24,7 +24,7 @@ class BooksController extends Controller
     }
 
     public function create() {
-        return view('books.create');
+        return view('admin.books.create');
     }
 
 
@@ -35,7 +35,7 @@ class BooksController extends Controller
             'author' => 'required|min:2',
             'image'=> 'mimes:jpeg,jpg,bmp,png'
         ]);
-
+        
         if($request->file('bookImage')){
             $imageLink = $request->file('bookImage')->getClientOriginalName();
             // not sure
@@ -56,7 +56,7 @@ class BooksController extends Controller
             'imageLink'=> $imageLink   
         ]);
  
-        return back()->with('status', 'Book Added Successfully !');
+      return redirect('admin/books/create')->with('status', 'Book Added Successfully !');
     }
 
     public function update(Request $request){
