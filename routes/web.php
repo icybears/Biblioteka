@@ -1,10 +1,10 @@
 <?php
 
-use App\Book;
+
 
 Route::get('/', function () {
     return view('index');
-})->name('index');
+})->name('home');
 
 
 Route::get('/library', 'BooksController@index')->name('library');
@@ -40,8 +40,12 @@ Route::get('/admin/books/delete', 'BooksController@delete')->name('admin.deleteB
 Route::post('/admin/books/edit', 'BooksController@update')->name('admin.updateBook');
 
 
-Auth::routes();
+Route::get('/login', 'AuthController@loginPage');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/login','AuthController@login')->name('login');
 
-Route::get('/profile', 'ProfileController@show');
+Route::get('/logout','AuthController@logout')->name('logout');
+
+
+
+

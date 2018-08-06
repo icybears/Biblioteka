@@ -7,33 +7,20 @@
         <h3>Login</h3>
         @csrf
         
-            
             <div class="row card-panel">
+                @include('partials.message')
                 <div class="row ">
                     <div class="input-field col s12 ">
-                        <input name="email" placeholder="Your Email" id="email" type="text" class="validate" value="{{ old('email') }}">
-                        <label for="email">Email Address</label> 
-                        @if ($errors->has('email'))
-                        <div class="card-panel red">
-                            <span class="white-text">
-                                  <strong>{{ $errors->first('email') }}</strong>
-                          </span>
-                        </div>
-        
-                        @endif
+                        <input name="name" placeholder="Your Username" id="name" type="text" class="validate" value="{{ old('name') }}">
+                        <label for="name">User Name</label> 
+               
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="password" placeholder="Your password" id="password" type="password" class="validate">
                         <label for="password">Password</label>
-                        @if ($errors->has('password'))
-                        <div class="card-panel red">
-                            <span class="white-text">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                        </div>
-                        @endif
+                      
                     </div>
         
                 </div>

@@ -6,7 +6,7 @@
             <ul class="right hide-on-med-and-down">
             <li><a href="{{ route('admin.createBook') }}">Add a Book</a></li>
             <li><a href="{{ route('admin.books') }}">Manage Books</a></li>
-            <li><a href="{{ route('admin.users') }}">Manage Users</a></li>
+            <li><a href="{{ route('logout') }}">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-menu">
             <li><a href="#">Add a Book</a></li>
