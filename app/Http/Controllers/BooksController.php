@@ -48,7 +48,7 @@ class BooksController extends Controller
             }
         
         } else {
-            $imageLink = '';
+            $imageLink = 'No_Image_Available.svg';
         }
        
         Book::create([
