@@ -141,3 +141,14 @@ nav{
     background-color:#448aff;
 }
 
+.pagination li.active{
+    background-color:#448aff;
+    
+}
+
+#logo-img{
+    vertical-align: middle;
+    margin-bottom:4px;
+    margin-right: 4px;
+    filter:invert(100%);
+}

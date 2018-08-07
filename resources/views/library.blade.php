@@ -7,8 +7,12 @@
     <div class="section">
         @include('partials.filter-books-public-form')
     </div>
-
-    <div class="row section">
+    <div class="row">
+            <div class="col s12 center-align">
+                {{ $books->links() }}
+            </div>
+        </div>
+    <div class="row ">
     @foreach($books as $book)
         <div class="col s12 m4 l3 ">
             <a href="{{route('book', $book->id)}}">

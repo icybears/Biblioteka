@@ -11,14 +11,14 @@
                 @include('partials.message')
                 <div class="row ">
                     <div class="input-field col s12 ">
-                        <input name="name" placeholder="Your Username" id="name" type="text" class="validate" value="{{ old('name') }}">
+                        <input name="name" placeholder="Your Username" id="name" type="text" class="validate" value="{{ old('name') }}" required>
                         <label for="name">User Name</label> 
                
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="password" placeholder="Your password" id="password" type="password" class="validate">
+                        <input name="password" placeholder="Your password" id="password" type="password" class="validate" required>
                         <label for="password">Password</label>
                       
                     </div>

@@ -5,11 +5,11 @@
         {{csrf_field()}}   
           <input type="hidden" name="id" value="{{ $book->id }}">         
           <div class="input-field col s12 m6">
-            <input type="text" id="title" name="Title" class="validate" value="{{ $book->title }}">
+            <input type="text" id="title" name="Title" class="validate" value="{{ $book->title }}" required>
             <label for="title">Title</label>
           </div>
           <div class="input-field col s12 m6">
-            <input type="text" id="author" name="Author" class="validate" value="{{ $book->author }}">
+            <input type="text" id="author" name="Author" class="validate" value="{{ $book->author }}" required >
             <label for="author">Author</label>
           </div>
 

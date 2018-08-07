@@ -10,11 +10,11 @@
           <form method="POST" action="{{ url('admin/books') }}" class="row"  files="true" enctype="multipart/form-data">
             @csrf       
             <div class="input-field col s12 m6">
-              <input type="text" id="title" name="title" class="validate">
+              <input type="text" id="title" name="title" class="validate" required>
               <label for="title">Title</label>
             </div>
             <div class="input-field col s12 m6">
-              <input type="text" id="author" name="author" class="validate">
+              <input type="text" id="author" name="author" class="validate" required>
               <label for="author">Author</label>
             </div>
   

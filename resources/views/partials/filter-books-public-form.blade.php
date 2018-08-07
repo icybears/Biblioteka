@@ -2,7 +2,7 @@
      <form class="row" id="search" action="{{ url('/library/search') }}">
             <div class="col s10 offset-s1 valign-wrapper center-align" >
                         <div class="input-field col m4 offset-m3">
-                                    <input placeholder="Search by Title or by Author" id="search" type="search" name="search" value="{{ request('search') }}">
+                                    <input placeholder="Search by Title or by Author" id="search" type="search" name="search" value="{{ request('search') }}" required>
                                     <label for="search">Search library</label>
                                 
                             </div>

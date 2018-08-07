@@ -7,6 +7,13 @@
         <h4>Manage Books</h4>
         <div class="section">
             @include('partials/filter-books-admin-form')
+            <div class="">
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            {{ $books->links() }}
+                        </div>
+                    </div>
+             </div>
         <div class="component ">
             <table class="centered bordered highlight ">
                 <thead>
