@@ -13,9 +13,9 @@
     </head>
     <body>
         @include('partials.header')
-
+        <main>
         @yield('content')
-
+        </main>
         @include('partials.footer')
         <script src="{{ asset('js/jquery.min.js') }}"></script>        
         <script src="{{ asset('js/materialize.min.js') }}"></script>

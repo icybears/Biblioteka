@@ -1,7 +1,7 @@
 @extends('layouts.main') 
 @section('content')
 
-<div class="container">
+<div id="loginPage" class="container">
     <div class="row">
         <form class="col s12 m6 l4 offset-m3 offset-l4 " method="POST" action="{{ route('login') }}">
         <h3>Login</h3>
