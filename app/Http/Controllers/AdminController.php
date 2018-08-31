@@ -19,44 +19,22 @@ class AdminController extends Controller
 
     public function manageBooks() {
         
-        $books = Book::orderBy('id','desc')->paginate(16);
+        $books = Book::getAllBooksWithPagination();
 
         return view('admin.books.manage', compact('books'));
     }
 
-    public function manageUsers() {
-        return view('admin.manage_users');
-    }
-
     public function bookSearch() {
-        $books = Book::where('title','like','%' . request('search') .'%')
-                 ->orWhere('author','like','%' . request('search') .'%')
-                 ->paginate(16);
+
+        $books = Book::searchByTitleOrAuthor(request('search'))->paginate(Book::$pagination);
+
          return view( 'admin.books.manage', compact('books'));
      }
 
-     public function bookFilter() {
-        if(request('search')){
-        $books = Book::where('title','like','%' . request('search') .'%')
-                        ->orWhere('author','like','%' . request('search') .'%');
-        } else {
-        $books = Book::where('id','>','0');
-        }
-        if(request('language')){
-           
-            $books = $books->where('language', request('language'));
-                    
-        }
-        if(request('filterby') == 'recent'){
-            $books = $books->orderBy('id','desc');
-                            
-        } else if(request('filterby') == 'oldest'){
-            $books = $books->orderBy('id','asc');                  
-        } else if(request('filterby') == 'bypages'){
-            $books = $books->orderBy('pages', 'asc');
-        }
+     public function bookFilter(Request $request) {
+   
+        $books = Book::filter($request)->paginate(Book::$pagination);
 
-        $books = $books->paginate(16);
         return view('admin.books.manage', compact('books'));
     }
 }
