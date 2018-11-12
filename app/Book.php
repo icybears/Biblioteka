@@ -8,11 +8,13 @@ use App\Book;
 
 class Book extends Model
 {
-    public static $pagination = 16;
+    
     
     public $timestamps = false;
     
-    protected $guarded = [];
+    protected $fillable = ['title','author','language','year','pages','imageLink'];
+
+    public static $pagination = 16;
 
     public static function searchByTitleOrAuthor($query)
     {
